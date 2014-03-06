@@ -20,8 +20,7 @@ src_install() {
 	fontinto TTF
 	dofont TTF/*.ttf
 
-	insinto /etc/fonts/conf.d
-	newins alef-fonts-fontconfig.conf 65-alef.conf
+	newfontconf alef-fonts-fontconfig.conf 65-alef.conf
 
 	dodoc OFL-license.txt readme.txt
 }
