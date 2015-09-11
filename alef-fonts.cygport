@@ -1,10 +1,10 @@
 inherit font
 
-NAME="font-alef-ttf"
+NAME="alef-fonts"
 VERSION=1.0
-RELEASE=1
+RELEASE=2
 CATEGORY="X11"
-SUMMARY="Hebrew font"
+SUMMARY="Multi-lingual screen font"
 DESCRIPTION="Alef was born to the screen and designed to the pixel in an
 attempt to extend the palette of Hebrew fonts available for web design and
 especially to challenge the only default -- Arial."
@@ -13,11 +13,15 @@ SRC_URI="http://alef.hagilda.com/Alef.zip"
 SRC_URI+=" http://pkgs.fedoraproject.org/cgit/alef-fonts.git/plain/alef-fonts-fontconfig.conf"
 SRC_DIR=.
 
+OBSOLETES="font-alef-ttf"
+
+ARCH=noarch
+
 src_compile() { :; }
 
 src_install() {
 	cd ${S}
-	fontinto TTF
+	fontinto alef
 	dofont TTF/*.ttf
 
 	newfontconf alef-fonts-fontconfig.conf 65-alef.conf
